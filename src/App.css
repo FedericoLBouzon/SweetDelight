@@ -1,0 +1,473 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 8.8vh;
+  padding: 0px 0px 0px 20px;
+  background-color: #7a6dcc;
+  color: white;
+  box-shadow: 0px 15px 10px 0px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0px 15px 10px 0px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0px 15px 10px 0px rgba(0, 0, 0, 0.1);
+}
+
+.links-container {
+  display: flex;
+}
+
+nav img {
+  border-radius: 50%;
+  width: 50px;
+}
+nav a {
+  text-align: center;
+  font-size: 20px;
+  text-decoration: none;
+  color: white;
+  padding: 0px 35px;
+  height: 8.8vh;
+  display: flex;
+  align-items: center;
+  transition: 0.5s all ease;
+}
+nav a:hover {
+  box-shadow: 0 -3px 0px #fff inset, 500px 0 0 rgba(255, 255, 255, 0.09) inset;
+}
+
+
+/*______________________________________________________________________________________ 
+                          CSS DEL CATALOGO */
+
+.catalogo-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.card {
+  background-color: #f5f3ff;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 15px;
+}
+
+.card-content h3 {
+  color: #4a3f85;
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+}
+
+.card-content p {
+  color: #7a6dcc;
+  font-size: 0.875rem;
+  margin-bottom: 10px;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-footer span {
+  color: #4a3f85;
+  font-size: 1.125rem;
+  font-weight: bold;
+}
+
+.card-footer button {
+  background-color: #7a6dcc;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.card-footer button:hover {
+  background-color: #4a3f85;
+}
+
+.products-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+}
+
+.product-card {
+  background-color: #e0dbf8;
+  border-radius: 10px;
+  width: 300px;
+  padding: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-10px);
+}
+
+.product-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.product-info h3 {
+  font-size: 1.5rem;
+  color: #7a6dcc;
+  margin-bottom: 10px;
+}
+
+.product-info p {
+  font-size: 1rem;
+  color: #333;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.product-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.product-footer span {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.add-to-cart {
+  background-color: #7a6dcc;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-to-cart:hover {
+  background-color: #5e54a4;
+}
+
+/* Responsivo para dispositivos móviles */
+@media (max-width: 768px) {
+  .products-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .product-card {
+    width: 100%;
+    max-width: 350px;
+  }
+}
+/*_____________________ CSS DEL CARRITO
+
+*/
+
+.cart-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.cart-items-list {
+  list-style: none;
+  padding: 0;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.cart-image {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-right: 15px;
+}
+
+.cart-info {
+  flex: 1;
+}
+
+.quantity-controls {
+  display: flex;
+  align-items: center;
+}
+
+.quantity-controls button {
+  margin: 0 5px;
+  padding: 5px 10px;
+  border: none;
+  background-color: #ddd;
+  cursor: pointer;
+}
+
+.quantity-controls button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.remove-btn {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.remove-btn:hover {
+  background-color: #d32f2f;
+}
+
+.clear-cart-btn {
+  background-color: #1976d2;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.clear-cart-btn:hover {
+  background-color: #1565c0;
+}
+
+/* Notificaciones */
+
+
+.notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #4caf50;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  z-index: 1000;
+  animation: fadeInOut 2s ease-in-out;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; }
+  20% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+button {
+  margin: 10px;
+  padding: 10px 20px;
+}
+
+/* _____________________________
+/* CSS DEL HOME PAGE
+
+.home {
+  font-family: 'Arial', sans-serif;
+  padding: 2rem;
+  background-color: #f0efff; /* Fondo claro */
+
+
+.value-proposition {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem 0;
+  background-color: #e6e0ff; /* Fondo liláceo suave */
+}
+
+.text-section {
+  max-width: 50%;
+}
+
+.text-section h1 {
+  font-size: 2.5rem;
+  color: #6f42c1; /* Color del título */
+}
+
+.text-section p {
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+  color: #5a4da3; /* Texto más oscuro */
+}
+
+.cta-button {
+  padding: 0.75rem 1.5rem;
+  background-color: #6f42c1; /* Botón púrpura */
+  color: white;
+  text-decoration: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #5a4da3; /* Efecto hover */
+}
+
+.image-section img {
+  width: 100%;
+  max-width: 400px; /* Ajusta según la imagen */
+  border-radius: 0.5rem;
+}
+
+.contact {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.contact h2 {
+  font-size: 2rem;
+  color: #6f42c1;
+}
+
+.contact p {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.contact ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.contact li {
+  font-size: 1.2rem;
+  color: #5a4da3;
+}
+
+
+
+/* _______________
+ABOUT CSS */
+
+.about-container {
+  padding: 50px;
+  background-color: #f0efff; /* Fondo para diferenciar */
+  font-family: Arial, sans-serif;
+}
+
+.about-title {
+  font-size: 3rem;
+  color: #7a6dcc;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.about-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 50px;
+  background-color: #e6e0ff; /* Fondo liláceo suave */
+  padding: 40px;
+  border-radius: 15px;
+}
+
+.about-image {
+  width: 400px; /* Aumentar tamaño de imagen */
+  height: 250px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.about-text {
+  max-width: 50%;
+  font-size: 1.2rem;
+}
+
+.about-text p {
+  margin-bottom: 20px;
+  line-height: 1.8;
+  color: #4a3f85;
+}
+
+/* Segunda fila y Primera fila con mismo estilo */
+.second-row,
+.first-row {
+  background-color: #e6e0ff; /* Fondo liláceo para ambas filas */
+  padding: 40px;
+  border-radius: 15px;
+}
+
+@media (max-width: 768px) {
+  .about-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-image {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+  }
+
+  .about-text {
+    max-width: 100%;
+  }
+}
