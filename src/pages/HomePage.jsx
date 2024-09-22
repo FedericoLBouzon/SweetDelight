@@ -1,25 +1,29 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import croissantsImage from '../assets/croissant.jpg'; // asegúrate de colocar la imagen correctamente
-
+import { Link } from "react-router-dom";
+import heroImage from "../assets/hero-image.png";
+import About from "../components/About";
+import Footer from "../components/footer/Footer.jsx";
 export default function HomePage() {
   return (
-    <main className="home">
-      <section className="value-proposition">
-        <div className="text-section">
-          <h1>ACÁ IRIA LA PROPUESTA DE VALOR DE LA EMPRESA</h1>
+    <>
+      <main className="hero-section">
+        <div className="column">
+          <h1>Productos de calidad, listos para hornear.</h1>
           <p>
-            Disfruta de productos horneados a diario con ingredientes naturales y recetas tradicionales.
-            Calidad, sabor y pasión en cada bocado.
+            Ofrecemos una amplia variedad de productos congelados auténticos,
+            perfectos para tu negocio, con el sabor y la frescura que esperas.
           </p>
-          <Link to="/products" className="cta-button">
-            Descubrí nuestros sabores
-          </Link>
+          <Link to="/products">Descubrí nuestros sabores</Link>
         </div>
-        <div className="image-section">
-          <img src={croissantsImage} alt="Croissants" />
+        <div className="column">
+          <img src={heroImage} alt="Imagen de croissants" />
         </div>
+      </main>
+
+      <section className="about-section">
+        <About />
       </section>
-    </main>
+
+      <Footer />
+    </>
   );
 }
